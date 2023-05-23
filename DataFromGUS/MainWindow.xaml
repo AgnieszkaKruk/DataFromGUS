@@ -1,13 +1,15 @@
-﻿<Window x:Class="DataFromGUS.MainWindow"
+﻿<mah:MetroWindow x:Class="DataFromGUS.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:DataFromGUS"
-        Title="GUS DataGrid" Height="450" Width="800">
-    <Window.DataContext>
+        Title="Lista obszarów tematycznych z GUS" Height="450" Width="800">
+   
+    <mah:MetroWindow.DataContext>
         <local:MainViewModel />
-    </Window.DataContext>
+    </mah:MetroWindow.DataContext>
     <Grid>
-        <DataGrid ItemsSource="{Binding Areas}" AutoGenerateColumns="False">
+        <DataGrid ItemsSource="{Binding Areas}" AutoGenerateColumns="False" GridLinesVisibility="All">
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
                     <Setter Property="Background" Value="{Binding LevelNameColor}" />
@@ -23,4 +25,4 @@
         </DataGrid>
 
     </Grid>
-</Window>
+</mah:MetroWindow>
